@@ -20,6 +20,16 @@ interface SpendingLimitCardProps {
   isDeleting?: boolean;
 }
 
+/**
+ * Card displaying a single spending limit with its usage progress, remaining
+ * amount, and a confirm-before-delete action.
+ *
+ * @param props - Component props.
+ * @param props.limit - The spending limit to display.
+ * @param props.onDelete - Called with the limit id once deletion is confirmed.
+ * @param props.isDeleting - Whether a delete is in progress; disables the actions. Defaults to `false`.
+ * @returns The rendered spending limit card.
+ */
 export default function SpendingLimitCard({
   limit,
   onDelete,

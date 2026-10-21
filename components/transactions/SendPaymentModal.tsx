@@ -22,6 +22,15 @@ interface SendPaymentModalProps {
 
 type ModalStatus = "idle" | PaymentStatus | "success" | "failed";
 
+/**
+ * Modal form for sending a Stellar payment. Collects recipient, amount, asset
+ * and memo, shows the network fee, checks spending limits, submits through the
+ * connected wallet, and queues the payment when the app is offline.
+ *
+ * @param props - Component props.
+ * @param props.onClose - Called when the modal should be dismissed.
+ * @returns The rendered send payment modal.
+ */
 export default function SendPaymentModal({ onClose }: SendPaymentModalProps) {
   const { isOnline, queueAction } = useOffline();
   const { toast } = useToast();
